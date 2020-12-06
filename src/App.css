@@ -92,7 +92,7 @@ body {
 
 .menu-content > img {
   width: 50%;
-  filter: invert(100%);
+  /* filter: invert(100%); */
 }
 
 .menu-content > h1 {
