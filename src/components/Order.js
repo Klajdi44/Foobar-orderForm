@@ -3,11 +3,12 @@ import Form from "./Form";
 import Menu from "./Menu";
 import Confirmation from "./Confirmation";
 
-function Order() {
+function Order(props) {
+
   return (
     <section>
       {/* <Form /> */}
-      <Menu />
+      <Menu apiData={props.apiData} />
       {/* <Confirmation /> */}
     </section>
   );
