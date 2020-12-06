@@ -1,9 +1,9 @@
-function Form(props) {
+function Menu(props) {
   return (
     <section className="form-wrapper">
-      <h1>Form</h1>
+      <h1>Menu</h1>
     </section>
   );
 }
 
-export default Form;
+export default Menu;
