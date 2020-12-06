@@ -57,6 +57,7 @@ body {
   grid-template-areas: "menu order";
   grid-template-columns: 3fr 1fr;
   gap: 1em;
+  min-height: 100vh;
 }
 
 .menu {
@@ -71,11 +72,14 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  align-content: flex-start;
 }
 
 .menu > h1 {
   width: 100%;
   padding: 1em;
+  font-size: var(--header-font-size);
+  font-weight: var(--header-font-weight);
 }
 
 .menu-card {
@@ -107,21 +111,30 @@ body {
   padding: 1em 2em 3em 2em;
 }
 
-.menu-order {
+.menu-order,
+.menu-order_order {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.menu-order > h3 {
-  width: 50%;
+.menu-order > h3,
+.menu-order_order > h3 {
+  width: 60%;
   font-size: var(--big-header-font-size);
   font-weight: var(--header-font-weight);
 }
 
-.menu-order > button {
+.menu-order > span,
+.menu-order_order > span {
+  font-size: var(--big-header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.menu-order > button,
+.menu-order_order > button {
   margin: 0 0.5em;
   padding: 0.3em;
   width: 10%;
@@ -130,9 +143,79 @@ body {
   font-size: var(--header-font-size);
 }
 
+/* Order edit */
 .order {
   grid-area: order;
   border-radius: var(--border-radius);
   color: var(--main-font-color);
   background: var(--wrapper-bg-color);
+}
+
+.order-flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  height: 90%;
+  max-height: 100%;
+}
+
+.order > h1 {
+  width: 100%;
+  padding: 1em;
+  font-size: var(--header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.order-cards {
+  padding: 1em;
+}
+
+.order-cards > ul {
+  margin-left: 0.5em;
+}
+
+.order-cards > ul > li {
+  list-style: none;
+  padding: 1em 0;
+  border-bottom: 1px solid gray;
+}
+
+.order-cards > ul > li:first-child {
+  padding: 0 0 1em 0;
+}
+
+.order-cards > ul > li > h1 {
+  font-size: var(--big-header-font-size);
+  font-weight: 500;
+}
+
+.order-price {
+  align-self: center;
+  margin-top: auto;
+}
+
+.overall-price {
+  text-align: right;
+}
+
+.overall-price > h1 {
+  display: inline;
+  padding: 0 1em;
+  font-size: var(--header-font-size);
+  font-weight: 400;
+}
+
+.overall-price > span {
+  padding: 0 1em;
+  font-size: var(--big-header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.order-price > button {
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--big-header-font-size);
 }
