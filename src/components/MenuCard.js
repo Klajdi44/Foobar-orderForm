@@ -1,3 +1,5 @@
+import MenuOrder from './MenuOrder';
+
 
 function MenuCard(props) {
 	const beersFromList = props.apiData[0];
@@ -15,12 +17,7 @@ function MenuCard(props) {
 						<h1>{beer.name}</h1>
 						<p>{beer.description.overallImpression}</p>
 					</div>
-					<div className="menu-order">
-						<h3>50DKK</h3>
-						<button>-</button>
-						<span>1</span>
-						<button>+</button>
-					</div>
+					<MenuOrder />
 				</div>
 			)
 		})
