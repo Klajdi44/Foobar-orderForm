@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-bg-color: #212121;
+  --wrapper-bg-color: #2c2c2c;
+  --header-font-family: "Roboto", sans-serif;
+  --header-font-weight: bold;
+  --big-header-font-size: 16pt;
+  --header-font-size: 14pt;
+  --regular-font-size: 11pt;
+  --main-font-color: #fff;
+  --border-radius: 15px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(158, 158, 158);
+}
+
+body {
+  font-family: var(--header-font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--regular-font-size);
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
+  padding: 1em;
+  font-weight: normal;
+}
+
+/* Menu */
+/* Menu cards */
+.menu-wrapper {
+  display: grid;
+  grid-template-areas: "menu order";
+  grid-template-columns: 3fr 1fr;
+  gap: 1em;
+}
+
+.menu {
+  grid-area: menu;
+  border-radius: var(--border-radius);
+  color: var(--main-font-color);
+  background: var(--wrapper-bg-color);
+  padding: 1em;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.menu > h1 {
+  width: 100%;
+  padding: 1em;
+}
+
+.menu-card {
+  width: 30%;
+  padding: 1em;
+  margin: 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--main-bg-color);
+}
+
+.menu-content > img {
+  width: 50%;
+  filter: invert(100%);
+}
+
+.menu-content > h1 {
+  padding: 1em 0;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-content > p {
+  padding: 1em 2em 3em 2em;
+}
+
+.menu-order {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-order > h3 {
+  width: 50%;
+  font-size: var(--big-header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.menu-order > button {
+  margin: 0 0.5em;
+  padding: 0.3em;
+  width: 10%;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--header-font-size);
+}
+
+.order {
+  grid-area: order;
+  border-radius: var(--border-radius);
+  color: var(--main-font-color);
+  background: var(--wrapper-bg-color);
+}

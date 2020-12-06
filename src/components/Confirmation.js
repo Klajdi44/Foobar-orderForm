@@ -1,6 +1,6 @@
 function Confirmation(props) {
   return (
-    <section className="form-wrapper">
+    <section className="confirmation-wrapper">
       <h1>Confirmation</h1>
     </section>
   );
