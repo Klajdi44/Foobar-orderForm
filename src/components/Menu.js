@@ -1,4 +1,5 @@
 import MenuCard from './MenuCard';
+import UnavailableBeers from './UnavailableBeers';
 function Menu(props) {
 
   console.log(props.apiData);
@@ -9,6 +10,8 @@ function Menu(props) {
         <h1>Our Beer selection</h1>
 
         <MenuCard apiData={props.apiData} />
+        <h1 className="unavailable-beer-heading" > Currently unavailable beers</h1>
+        <UnavailableBeers apiData={props.apiData} />
       </div>
 
       <div className="order">

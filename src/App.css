@@ -82,6 +82,10 @@ body {
   font-weight: var(--header-font-weight);
 }
 
+.unavailable-beer-heading{
+  margin-top: 5em;
+}
+
 .menu-card {
   width: 30%;
   padding: 1em;
@@ -89,6 +93,10 @@ body {
   border-radius: var(--border-radius);
   background-color: var(--main-bg-color);
 }
+
+.menu-unavailable {
+  filter: invert(20%);
+  }
 
 .menu-content > img {
   width: 50%;
