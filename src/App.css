@@ -94,9 +94,7 @@ body {
   background-color: var(--main-bg-color);
 }
 
-.menu-unavailable {
-  filter: invert(20%);
-  }
+
 
 .menu-content > img {
   width: 50%;
@@ -228,7 +226,7 @@ body {
   font-size: var(--big-header-font-size);
 }
 
-* Loader */
+/* Loader */
 .loader-wrapper{
   position: absolute;
   top: 50%;
