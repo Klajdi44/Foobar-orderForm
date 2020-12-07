@@ -19,7 +19,7 @@ function Menu(props) {
 
       <div className="order">
         <h1>Your Order</h1>
-        <div className="order-flex">
+        <div className="order-grid">
           <div className="order-cards">
             <ul>
               {orderObj.map((order) => {
@@ -27,7 +27,6 @@ function Menu(props) {
                   return (
                     <li>
                       <h1>{order.name}</h1>
-                      <br />
                       <MenuOrder name={order.name} />
                     </li>
                   );
