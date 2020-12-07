@@ -71,8 +71,12 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   align-content: flex-start;
+}
+
+.menu-unavailable{
+  filter: contrast(50%);
 }
 
 .menu > h1 {
@@ -97,8 +101,8 @@ body {
 
 
 .menu-content > img {
+  min-width: 3em;
   width: 50%;
-  /* filter: invert(100%); */
 }
 
 .menu-content > h1 {

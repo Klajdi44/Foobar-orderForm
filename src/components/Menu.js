@@ -1,15 +1,18 @@
+import React, { useContext } from 'react';
 import MenuCard from './MenuCard';
 import UnavailableBeers from './UnavailableBeers';
-function Menu(props) {
+import { OrderContext } from './OrderContext';
 
-  console.log(props.apiData);
+
+function Menu(props) {
+  const [orderObj, setOrderObj] = useContext(OrderContext);
 
   return (
     <article className="menu-wrapper">
       <div className="menu">
         <h1>Our Beer selection</h1>
 
-        <MenuCard apiData={props.apiData} />
+        <MenuCard filteredBeers={props.filteredBeers} />
         <h1 className="unavailable-beer-heading" > Currently unavailable beers</h1>
         <UnavailableBeers apiData={props.apiData} />
       </div>
@@ -19,16 +22,23 @@ function Menu(props) {
         <div className="order-flex">
           <div className="order-cards">
             <ul>
-              <li>
-                <h1>El Hefe</h1>
-                <br />
-                <div className="menu-order_order">
-                  <h3>50DKK</h3>
-                  <button>-</button>
-                  <span>1</span>
-                  <button>+</button>
-                </div>
-              </li>
+
+              {orderObj.map(order => {
+                if (order.amount > 0) {
+                  return (
+                    <li>
+                      <h1>{order.name}</h1>
+                      <br />
+                      <div className="menu-order_order">
+                        <h3>50DKK</h3>
+                        <button>-</button>
+                        <span>{order.amount}</span>
+                        <button>+</button>
+                      </div>
+                    </li>)
+                } return null;
+              })}
+
             </ul>
           </div>
           <div className="order-price">

@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { OrderContext } from './OrderContext';
 
 function MenuOrder(props) {
-	const [beerCount, setBeerCount] = useState(0);
-	// const [price, setPrice] = useState(50);
+	const [orderObj, setOrderObj] = useContext(OrderContext);
+	const oneOrder = orderObj.find(o => o.name === props.name);
 
 	function addBeer() {
-		setBeerCount(beerCount + 1);
-		// setPrice(price + 50);
+		const nextOrder = orderObj.map(order => {
+			if (order.name === props.name) {
+				order.amount = order.amount + 1;
+			}
+			return order;
+		})
+
+		setOrderObj(nextOrder);
+
 	}
+	console.log(orderObj);
 
 	function removeBeer() {
-		beerCount === 0 ? setBeerCount(0) : setBeerCount(beerCount - 1);
 
-		// price === 50 ? setPrice(50) : setPrice(price - 50);
+		const prevOrder = orderObj.map(order => {
+
+			if (order.name === props.name && order.amount !== 0) {
+				order.amount = order.amount - 1;
+			}
+			return order;
+		})
+
+		setOrderObj(prevOrder);
+
 	}
-
 
 	return (
 		<div className="menu-order">
 			<h3>50DKK</h3>
 			<button onClick={removeBeer}>-</button>
-			<span>{beerCount}</span>
+			<span>{oneOrder?.amount}</span>
 			<button onClick={addBeer} >+</button>
-		</div>
+		</div >
 
 	);
 }

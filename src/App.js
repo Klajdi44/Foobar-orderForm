@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import getData from './modules/getData';
 import Loader from 'react-loader-spinner'
 import Order from "./components/Order";
+import { OrderProvider } from './components/OrderContext';
+
 import "./App.css";
 
 function App() {
   const [apiData, setApiData] = useState([]);
 
-  console.log(apiData);
   const urls = [
     "https://foobar-exam-data.herokuapp.com/beertypes",
     "https://foobar-exam-data.herokuapp.com/"
@@ -31,7 +32,7 @@ function App() {
             width={100}
           />
         </div>
-        : <Order apiData={apiData} />
+        : <OrderProvider><Order apiData={apiData} /> </OrderProvider>
       }
     </div>
   );
