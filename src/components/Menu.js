@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import MenuCard from './MenuCard';
-import UnavailableBeers from './UnavailableBeers';
-import { OrderContext } from './OrderContext';
-
+import React, { useContext } from "react";
+import MenuCard from "./MenuCard";
+import MenuOrder from "./MenuOrder";
+import UnavailableBeers from "./UnavailableBeers";
+import { OrderContext } from "./OrderContext";
 
 function Menu(props) {
   const [orderObj, setOrderObj] = useContext(OrderContext);
@@ -13,7 +13,7 @@ function Menu(props) {
         <h1>Our Beer selection</h1>
 
         <MenuCard filteredBeers={props.filteredBeers} />
-        <h1 className="unavailable-beer-heading" > Currently unavailable beers</h1>
+        <h1 className="unavailable-beer-heading"> Currently unavailable beers</h1>
         <UnavailableBeers apiData={props.apiData} />
       </div>
 
@@ -22,23 +22,18 @@ function Menu(props) {
         <div className="order-flex">
           <div className="order-cards">
             <ul>
-
-              {orderObj.map(order => {
+              {orderObj.map((order) => {
                 if (order.amount > 0) {
                   return (
                     <li>
                       <h1>{order.name}</h1>
                       <br />
-                      <div className="menu-order_order">
-                        <h3>50DKK</h3>
-                        <button>-</button>
-                        <span>{order.amount}</span>
-                        <button>+</button>
-                      </div>
-                    </li>)
-                } return null;
+                      <MenuOrder name={order.name} />
+                    </li>
+                  );
+                }
+                return null;
               })}
-
             </ul>
           </div>
           <div className="order-price">
