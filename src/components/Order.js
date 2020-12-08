@@ -15,7 +15,7 @@ function Order(props) {
   useEffect(() => {
     const orders = filteredBeers.map(tap => {
 
-      return { name: tap.name, amount: 0 }
+      return { name: tap.name, amount: 0, price: 0 }
     });
     setOrderObj(orders);
   }, []);

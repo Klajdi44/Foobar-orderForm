@@ -9,6 +9,7 @@ function MenuOrder(props) {
 		const nextOrder = orderObj.map(order => {
 			if (order.name === props.name) {
 				order.amount = order.amount + 1;
+				order.price = order.price + 50;
 			}
 			return order;
 		})
@@ -24,6 +25,8 @@ function MenuOrder(props) {
 
 			if (order.name === props.name && order.amount !== 0) {
 				order.amount = order.amount - 1;
+				order.price = order.price - 50;
+
 			}
 			return order;
 		})
@@ -31,10 +34,10 @@ function MenuOrder(props) {
 		setOrderObj(prevOrder);
 
 	}
-
+	console.log(orderObj.price);
 	return (
 		<div className="menu-order">
-			<h3>50DKK</h3>
+			<h3>{oneOrder?.price + 'DKK'}</h3>
 			<button onClick={removeBeer}>-</button>
 			<span>{oneOrder?.amount}</span>
 			<button onClick={addBeer} >+</button>

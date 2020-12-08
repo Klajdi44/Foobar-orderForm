@@ -38,7 +38,9 @@ function Menu(props) {
           <div className="order-price">
             <div className="overall-price">
               <h1>Total</h1>
-              <span>50DKK</span>
+              <span>{orderObj.reduce((acc, value) => {
+                return acc + value.price;
+              }, 0)} DKK</span>
               <br />
             </div>
 
