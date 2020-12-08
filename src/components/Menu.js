@@ -44,7 +44,7 @@ function Menu(props) {
               <br />
             </div>
 
-            <button>Proceed To Checkout</button>
+            <button onClick={() => orderObj.map(beer => beer.price > 0 ? props.setPage('formPage') : null)}>Proceed To Checkout</button>
           </div>
         </div>
       </div>

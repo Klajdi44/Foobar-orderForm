@@ -1,10 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Form from "./Form";
 import Menu from "./Menu";
 import Confirmation from "./Confirmation";
 import { OrderContext } from './OrderContext';
 
 function Order(props) {
+  const [page, setPage] = useState('orderPage');
+
   const beersFromList = props.apiData[0];
   const beersFromTap = props.apiData[1].taps.map((beer) => beer.beer);
   const filteredBeers = beersFromList.filter((beers) => beersFromTap.includes(beers.name));
@@ -24,8 +26,9 @@ function Order(props) {
 
   return (
     <section>
-      {/* <Form /> */}
-      <Menu apiData={props.apiData} filteredBeers={filteredBeers} />
+      {page === 'orderPage' ? <Menu setPage={setPage} apiData={props.apiData} filteredBeers={filteredBeers} /> : null}
+      {page === 'formPage' ? <Form setPage={setPage} /> : null}
+
       {/* <Confirmation /> */}
     </section>
   )
