@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { OrderContext } from './OrderContext';
 
 function MenuOrder(props) {
@@ -37,12 +37,11 @@ function MenuOrder(props) {
 	console.log(orderObj.price);
 	return (
 		<div className="menu-order">
-			<h3>{oneOrder?.price + 'DKK'}</h3>
+			<h3>{props.showCheckoutPrice ? oneOrder?.price + 'DKK' : 50 + 'DKK'}</h3>
 			<button onClick={removeBeer}>-</button>
 			<span>{oneOrder?.amount}</span>
 			<button onClick={addBeer} >+</button>
 		</div >
-
 	);
 }
 

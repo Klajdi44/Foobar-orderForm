@@ -27,7 +27,7 @@ function Menu(props) {
                   return (
                     <li>
                       <h1>{order.name}</h1>
-                      <MenuOrder name={order.name} />
+                      <MenuOrder showCheckoutPrice={true} name={order.name} />
                     </li>
                   );
                 }
