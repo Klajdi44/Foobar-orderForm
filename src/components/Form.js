@@ -21,7 +21,7 @@ function Form(props) {
     postData(filteredPostOrders, 'https://foobar-exam-data.herokuapp.com/order', (data) => {
       return data.message === "added" ? <div>
         {props.setPage('confirmationPage')}
-
+        {props.setConfirmationP(data.id)}
         {console.log(data.id)}
 
       </div> : null;

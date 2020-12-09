@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Form from "./Form";
 import Menu from "./Menu";
+import Confirmation from "./Confirmation";
+
 
 import { OrderContext } from './OrderContext';
 
 function Order(props) {
   const [page, setPage] = useState('orderPage');
+  const [confirmationP, setConfirmationP] = useState('');
 
   const beersFromList = props.apiData[0];
   const beersFromTap = props.apiData[1].taps.map((beer) => beer.beer);
@@ -27,7 +30,8 @@ function Order(props) {
   return (
     <section>
       {page === 'orderPage' ? <Menu setPage={setPage} apiData={props.apiData} filteredBeers={filteredBeers} /> : null}
-      {page === 'formPage' ? <Form setPage={setPage} /> : null}
+      {page === 'formPage' ? <Form setPage={setPage} setConfirmationP={setConfirmationP} /> : null}
+      {page === 'confirmationPage' ? <Confirmation confirmationP={confirmationP} setConfirmationP={setConfirmationP} /> : null}
     </section>
   )
 }
