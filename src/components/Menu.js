@@ -5,6 +5,7 @@ import UnavailableBeers from "./UnavailableBeers";
 import { OrderContext } from "./OrderContext";
 
 function Menu(props) {
+  // eslint-disable-next-line
   const [orderObj, setOrderObj] = useContext(OrderContext);
 
   return (

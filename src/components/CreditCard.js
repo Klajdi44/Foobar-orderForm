@@ -48,7 +48,6 @@ export default class CreditCard extends React.Component {
 
 	handleSubmit = (e) => {
 		// e.preventDefault();
-		const { issuer } = this.state;
 		const formData = [...e.target.elements]
 			.filter((d) => d.name)
 			.reduce((acc, d) => {

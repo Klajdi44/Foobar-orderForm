@@ -10,12 +10,11 @@ import "./App.css";
 function App() {
   const [apiData, setApiData] = useState([]);
 
-  const urls = [
-    "https://foobar-exam-data.herokuapp.com/beertypes",
-    "https://foobar-exam-data.herokuapp.com/"
-  ];
   useEffect(() => {
-
+    const urls = [
+      "https://foobar-exam-data.herokuapp.com/beertypes",
+      "https://foobar-exam-data.herokuapp.com/"
+    ];
 
     getData(urls).then(data => setApiData(data));
 

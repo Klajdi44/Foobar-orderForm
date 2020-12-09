@@ -14,7 +14,7 @@ function Order(props) {
   const beersFromTap = props.apiData[1].taps.map((beer) => beer.beer);
   const filteredBeers = beersFromList.filter((beers) => beersFromTap.includes(beers.name));
 
-
+  // eslint-disable-next-line
   const [orderObj, setOrderObj] = useContext(OrderContext);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ function Order(props) {
       return { name: tap.name, amount: 0, price: 0 }
     });
     setOrderObj(orders);
+    // eslint-disable-next-line
   }, []);
 
 
@@ -31,7 +32,7 @@ function Order(props) {
     <section>
       {page === 'orderPage' ? <Menu setPage={setPage} apiData={props.apiData} filteredBeers={filteredBeers} /> : null}
       {page === 'formPage' ? <Form setPage={setPage} setConfirmationP={setConfirmationP} /> : null}
-      {page === 'confirmationPage' ? <Confirmation confirmationP={confirmationP} setConfirmationP={setConfirmationP} /> : null}
+      {page === 'confirmationPage' ? <Confirmation confirmationP={confirmationP} setPage={setPage} /> : null}
     </section>
   )
 }
