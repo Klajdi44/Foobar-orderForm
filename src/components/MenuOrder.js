@@ -17,7 +17,6 @@ function MenuOrder(props) {
 		setOrderObj(nextOrder);
 
 	}
-	console.log(orderObj);
 
 	function removeBeer() {
 
@@ -34,7 +33,6 @@ function MenuOrder(props) {
 		setOrderObj(prevOrder);
 
 	}
-	console.log(orderObj.price);
 	return (
 		<div className="menu-order">
 			<h3>{props.showCheckoutPrice ? oneOrder?.price + 'DKK' : 50 + 'DKK'}</h3>

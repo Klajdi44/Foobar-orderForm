@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Form from "./Form";
 import Menu from "./Menu";
-import Confirmation from "./Confirmation";
+
 import { OrderContext } from './OrderContext';
 
 function Order(props) {
@@ -28,8 +28,6 @@ function Order(props) {
     <section>
       {page === 'orderPage' ? <Menu setPage={setPage} apiData={props.apiData} filteredBeers={filteredBeers} /> : null}
       {page === 'formPage' ? <Form setPage={setPage} /> : null}
-
-      {/* <Confirmation /> */}
     </section>
   )
 }
