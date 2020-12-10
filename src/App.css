@@ -46,7 +46,7 @@ body {
   font-size: var(--regular-font-size);
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
-  padding: 1em;
+  padding: 0;
   font-weight: 400;
 }
 
@@ -244,7 +244,7 @@ body {
 
 /* form */
 form {
- margin: 0 auto;
+  margin: 0 auto;
 }
 
 fieldset {
@@ -263,14 +263,14 @@ label {
   font-size: 1.5em;
   padding: 1em 0 0;
 }
-input{
+
+input {
   width: 90%;
-  padding: .6em;
+  padding: 0.6em;
   border-radius: 20px;
 }
 
-
-input:focus{
+input:focus {
   outline: 2px solid gray;
   -moz-outline-radius: 20px;
   box-shadow: none;
@@ -287,31 +287,82 @@ select:not(:focus):valid {
   border: 2px solid green;
 }
 
-.form-span {
+.form-wrapper {
+  display: grid;
+  grid-template-areas: "back" "orderlist" "cc";
+  grid-template-columns: 1fr;
+}
+
+.cc-wrapper {
+  grid-area: cc;
+  background-color: white;
+  color: var(--main-bg-color);
+  padding: 2em;
+}
+
+.cc-wrapper > h1 {
+  font-size: 2.5em;
+}
+
+.cc-wrapper > form {
+  text-align: center;
+}
+
+.cc-wrapper > form span {
   margin-bottom: 0.5em;
-  color:rgb(175, 162, 162);
-  font-size: 1em;
-  line-height: 160%;
+}
+
+.back-wrapper {
+  grid-area: back;
+  background: linear-gradient(90deg, #fff 50%, var(--main-bg-color) 50%);
+}
+
+.back {
+  margin: 1em;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: var(--big-header-font-size);
+}
+
+.back > svg {
+  fill: transparent;
+  stroke: var(--main-bg-color);
+  stroke-width: 3;
+  transition: all 0.8s ease-in-out;
+}
+
+.order-list-wrapper {
+  grid-area: orderlist;
+  padding: 2em;
+  min-height: 100vh;
 }
 
 .form-btn {
+  margin: 1em;
+  width: 40%;
+  height: 3em;
   text-decoration: none;
   padding: 0.5em 2em;
-
-  font-size: var(--header-font-size);
-
+  background-color: var(--main-bg-color);
   color: white;
   border: 2px solid transparent;
   transition: all 0.3s;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.App-payment{
+.App-payment {
   display: grid;
   place-items: center;
 }
 
-.rccs{
+.rccs {
   margin-top: 1em;
 }
 
@@ -338,16 +389,56 @@ select:not(:focus):valid {
     transform: translate3d(4px, 0, 0);
   }
 }
-@media only screen and (min-width: 375px) {
-  fieldset{
-    margin-left:2.3em;
-  }
+
+.form-btn:hover {
+  background: transparent;
+  border: 2px solid var(--main-bg-color);
+  color: var(--main-bg-color);
 }
 
+/* Oder List */
+
+.order-list-wrapper > h1 {
+  font-size: 2.5em;
+  text-align: right;
+}
+
+.order-list-wrapper > ul {
+  margin: 2em 2em 1em 2em;
+}
+
+.order-list-wrapper > ul > li {
+  list-style: none;
+  padding: 1em 0;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-list-wrapper > ul > li:first-child {
+  padding: 0 0 1em 0;
+}
+
+.order-list-wrapper > ul > li > h2 {
+  font-size: var(--header-font-size);
+  font-weight: 500;
+}
+
+.order-list-wrapper > ul > li > img {
+  width: 5em;
+}
 
 @media only screen and (min-width: 768px) {
   .menu-card {
     width: 45%;
+  }
+
+  .form-wrapper {
+    grid-template-areas: "back back" "cc orderlist";
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
   }
 }
 
