@@ -10,8 +10,8 @@ function Confirmation(props) {
 
   return (
     <section className="confirmation-wrapper">
-      <h1>{props.confirmationP}</h1>
-      <h2>hello</h2>
+      <h1>Thank you for your order</h1>
+      <h2>Your order number is <span> #{props.confirmationP}</span></h2>
       <button onClick={() => {
         props.setPage('orderPage');
         setOrderObj(resetBeers);

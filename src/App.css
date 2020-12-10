@@ -430,6 +430,50 @@ select:not(:focus):valid {
   width: 5em;
 }
 
+/* confirmation page */
+
+.confirmation-wrapper{
+  position: absolute;
+   top: 50%;
+   right: 50%;
+   transform: translate(50%,-50%);
+   background: var(--wrapper-bg-color);
+   border-radius: var(--border-radius);
+   padding:4em;
+  width:90%;
+   display:flex;
+   flex-direction:column;
+   justify-content:space-between;
+   align-items:center;
+   height: 40%;
+}
+
+.confirmation-wrapper  button{
+  margin: 1em;
+font-size: 1em;
+  height: 3em;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.confirmation-wrapper h1{
+font-size: 1.3em;
+font-weight: normal;
+}
+.confirmation-wrapper h2{
+  font-size: 1.1em;
+font-weight: normal;
+}
+.confirmation-wrapper span{
+  font-size: 1.5em;
+font-weight: bold;
+}
+
 @media only screen and (min-width: 768px) {
   .menu-card {
     width: 45%;
