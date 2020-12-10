@@ -46,7 +46,7 @@ body {
   font-size: var(--regular-font-size);
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
-  padding: 1em;
+  padding: 0;
   font-weight: 400;
 }
 
@@ -240,6 +240,139 @@ body {
   background: var(--wrapper-bg-color);
   padding: 5em;
   border-radius: var(--border-radius);
+}
+
+/* Form */
+.form-wrapper {
+  display: grid;
+  grid-template-areas: "cc orderlist";
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.cc-wrapper {
+  grid-area: cc;
+  background-color: white;
+  color: var(--main-bg-color);
+  padding: 2em;
+}
+
+.order-list-wrapper {
+  grid-area: orderlist;
+  padding: 2em;
+}
+/* CC */
+
+.cc-wrapper > h1 {
+  font-size: 2.5em;
+}
+
+.cc-wrapper > form {
+  padding: 2em;
+  text-align: center;
+}
+
+.rccs {
+  margin: 1em auto;
+}
+
+.cc-wrapper input {
+  height: 2em;
+  font-size: 1.5em;
+  font-weight: var(--header-font-weight);
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0 0.5em;
+}
+
+.cc-wrapper label {
+  font-size: var(--big-header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.App-payment > .form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.exp,
+.cvc {
+  width: 40%;
+}
+
+.form-span {
+  margin-bottom: 0.5em;
+  color: var(--wrapper-bg-color);
+  font-size: var(--regular-font-size);
+  line-height: 160%;
+}
+
+.form-btn {
+  margin: 1em;
+  width: 40%;
+  height: 3em;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  background-color: var(--main-bg-color);
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: var(--header-font-size);
+  font-weight: var(--header-font-weight);
+}
+
+.form-btn:hover {
+  background: transparent;
+  border: 2px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+
+/* Oder List */
+
+.order-list-wrapper > h1 {
+  font-size: 2.5em;
+  text-align: right;
+}
+
+.order-list-wrapper > ul {
+  margin: 2em 2em 1em 2em;
+}
+
+.order-list-wrapper > ul > li {
+  list-style: none;
+  padding: 1em 0;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-list-wrapper > ul > li:first-child {
+  padding: 0 0 1em 0;
+}
+
+.order-list-wrapper > ul > li > h2 {
+  font-size: var(--header-font-size);
+  font-weight: 500;
+}
+
+.order-list-wrapper > ul > li > img {
+  width: 5em;
 }
 
 @media only screen and (min-width: 768px) {
