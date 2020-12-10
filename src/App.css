@@ -242,6 +242,109 @@ body {
   border-radius: var(--border-radius);
 }
 
+/* form */
+form {
+ margin: 0 auto;
+}
+
+fieldset {
+  text-align: left;
+  margin-left: 1em;
+  border: none;
+  padding: 0 0 2em 0;
+}
+
+label,
+.form-span {
+  display: block;
+}
+
+label {
+  font-size: 1.5em;
+  padding: 1em 0 0;
+}
+input{
+  width: 90%;
+  padding: .6em;
+  border-radius: 20px;
+}
+
+
+input:focus{
+  outline: 2px solid gray;
+  -moz-outline-radius: 20px;
+  box-shadow: none;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid,
+select:not(:placeholder-shown):not(:focus):invalid {
+  border: 2px solid red;
+  animation: shake 1s linear;
+}
+
+input:not(:focus):valid,
+select:not(:focus):valid {
+  border: 2px solid green;
+}
+
+.form-span {
+  margin-bottom: 0.5em;
+  color:rgb(175, 162, 162);
+  font-size: 1em;
+  line-height: 160%;
+}
+
+.form-btn {
+  text-decoration: none;
+  padding: 0.5em 2em;
+
+  font-size: var(--header-font-size);
+
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.App-payment{
+  display: grid;
+  place-items: center;
+}
+
+.rccs{
+  margin-top: 1em;
+}
+
+/* animations */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+@media only screen and (min-width: 375px) {
+  fieldset{
+    margin-left:2.3em;
+  }
+}
+
+
 @media only screen and (min-width: 768px) {
   .menu-card {
     width: 45%;

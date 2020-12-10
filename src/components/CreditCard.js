@@ -76,60 +76,69 @@ export default class CreditCard extends React.Component {
 						callback={this.handleCallback}
 					/>
 					<div ref={(c) => (this.form = c)} onSubmit={this.handleSubmit}>
-						<div className="form-group">
-							<input
-								type="tel"
-								name="number"
-								className="form-control"
-								placeholder="Card Number"
-								pattern="[\d| ]{16,22}"
-								required
-								onChange={this.handleInputChange}
-								onFocus={this.handleInputFocus}
-							/>
-							<small>E.g.: 49..., 51..., 36..., 37...</small>
-						</div>
-						<div className="form-group">
-							<input
-								type="text"
-								name="name"
-								className="form-control"
-								placeholder="Name"
-								required
-								onInput={(e) => allLetter(e.target)}
-								onChange={this.handleInputChange}
-								onFocus={this.handleInputFocus}
-							/>
-						</div>
-						<div className="row">
-							<div className="col-6">
+						<fieldset>
+							<div className="form-group">
+								<label for="number">Card Number</label>
+								<span class="form-span name">Enter the card number</span>
+								<input
+									id='number'
+									type="tel"
+									name="number"
+									className="form-control"
+									placeholder=""
+									pattern="[\d| ]{16,22}"
+									required
+									onChange={this.handleInputChange}
+									onFocus={this.handleInputFocus}
+								/>
+							</div>
+							<div className="form-group">
+								<label for="name">Full name</label>
+								<span class="form-span name">As it appears on the card</span>
+								<input
+									type="text"
+									name="name"
+									className="form-control"
+									placeholder=""
+									required
+									onInput={(e) => allLetter(e.target)}
+									onChange={this.handleInputChange}
+									onFocus={this.handleInputFocus}
+								/>
+							</div>
+							<div className="form-group">
+								<label for="expiry">Exp Date</label>
+								<span class="form-span name">Eg 12/2021</span>
 								<input
 									type="tel"
 									name="expiry"
 									className="form-control"
-									placeholder="Valid Thru"
+									placeholder=" "
 									pattern="(0[1-9]|10|11|12)/2[0-9]{3}$"
 									required
 									onChange={this.handleInputChange}
 									onFocus={this.handleInputFocus}
 								/>
 							</div>
-							<div className="col-6">
+							<div className="form-group">
+								<label for="number">cvc</label>
+								<span class="form-span name">Enter the cvc (usually on the back of the card)</span>
 								<input
 									type="tel"
 									name="cvc"
 									className="form-control"
-									placeholder="CVC"
+									placeholder=""
 									pattern="\d{3,4}"
 									required
 									onChange={this.handleInputChange}
 									onFocus={this.handleInputFocus}
 								/>
+
 							</div>
-						</div>
-						<input type="hidden" name="issuer" value={issuer} />
-						<div className="form-actions">
-						</div>
+							<input type="hidden" name="issuer" value={issuer} />
+							<div className="form-actions">
+							</div>
+						</fieldset>
 					</div>
 					{formData && (
 						<div className="App-highlight">

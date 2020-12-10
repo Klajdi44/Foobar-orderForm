@@ -31,7 +31,6 @@ function Form(props) {
   return (
     <article className="form-wrapper">
       <div>
-        <h1>I am a beautiful form</h1>
         <button onClick={() => props.setPage('orderPage')}> Go Back</button>
         <form onSubmit={(e) => {
           e.preventDefault();
