@@ -440,12 +440,12 @@ select:not(:focus):valid {
    background: var(--wrapper-bg-color);
    border-radius: var(--border-radius);
    padding:4em;
-  width:90%;
+  width:95%;
    display:flex;
    flex-direction:column;
    justify-content:space-between;
    align-items:center;
-   height: 40%;
+   height: 50%;
 }
 
 .confirmation-wrapper  button{
@@ -462,16 +462,57 @@ font-size: 1em;
   cursor: pointer;
 }
 .confirmation-wrapper h1{
-font-size: 1.3em;
+font-size: 1em;
 font-weight: normal;
 }
 .confirmation-wrapper h2{
-  font-size: 1.1em;
+  font-size: 1em;
 font-weight: normal;
 }
 .confirmation-wrapper span{
-  font-size: 1.5em;
+  font-size: 1.3em;
 font-weight: bold;
+}
+
+.check{
+width:60px;
+}
+
+.check path{
+  stroke-dashoffset: 1000px;
+  stroke-dasharray: 1000px;
+  animation: firstStage .5s forwards;
+}
+.check g{
+  fill-opacity: 0;
+  animation: secondStage 1.5s .5s forwards;
+}
+
+@keyframes firstStage{
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes secondStage{
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 370px){
+  .confirmation-wrapper{
+    width:90%;
+  }
+  
+  .confirmation-wrapper h1{
+  font-size: 1.3em;
+  }
+  .confirmation-wrapper h2{
+    font-size: 1.1em;
+  }
+  .confirmation-wrapper span{
+    font-size: 1.5em;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -484,6 +525,27 @@ font-weight: bold;
     grid-template-columns: 1fr 1fr;
     min-height: 80vh;
   }
+
+  .confirmation-wrapper{
+  max-width: 50%;
+  max-height:50%;
+  justify-content: space-evenly;
+  }
+
+  .confirmation-wrapper h1{
+    font-size: 1.5em;
+   }
+   .confirmation-wrapper h2{
+     font-size: 1.3em;
+    }
+    .confirmation-wrapper button{
+     font-size: 1.5em;
+    }
+ 
+ 
+ .check{
+   width:100px;
+   }
 }
 
 @media only screen and (min-width: 992px) {
@@ -514,6 +576,11 @@ font-weight: bold;
   .order {
     height: 95vh;
   }
+  .confirmation-wrapper{
+    max-width: 60%;
+    max-height:55%;
+    }
+
 }
 
 @media only screen and (min-device-width: 1200px) {
@@ -523,4 +590,22 @@ font-weight: bold;
   .menu-card {
     width: 30%;
   }
+  .confirmation-wrapper {
+    justify-content:space-between;
+   }
+  .confirmation-wrapper h1{
+   font-size: 2em;
+  }
+  .confirmation-wrapper h2{
+    font-size: 2.5em;
+   }
+   .confirmation-wrapper button{
+    font-size: 1.5em;
+   }
+
+
+.check{
+  width:90px;
+  }
+ 
 }
