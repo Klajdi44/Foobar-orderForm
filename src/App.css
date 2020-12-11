@@ -482,11 +482,11 @@ width:60px;
 .check path{
   stroke-dashoffset: 1000px;
   stroke-dasharray: 1000px;
-  animation: firstStage .5s forwards;
+  animation: firstStage .5s .8s forwards;
 }
 .check g{
   fill-opacity: 0;
-  animation: secondStage 1.5s .5s forwards;
+  animation: secondStage 1.5s 1.3s forwards;
 }
 
 @keyframes firstStage{
