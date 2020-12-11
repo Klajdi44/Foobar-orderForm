@@ -9,7 +9,7 @@ function UnavailableBeers(props) {
 		filteredBeers.map(beer => {
 			return (
 
-				<div className="menu-card menu-unavailable">
+				<div className="menu-card menu-unavailable" key={beer.name}>
 					<div className="menu-content">
 						<img src={`/images/${beer.label}`} alt="Beer"></img>
 						<h1>{beer.name}</h1>

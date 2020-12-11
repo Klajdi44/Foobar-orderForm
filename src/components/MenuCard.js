@@ -11,7 +11,7 @@ function MenuCard(props) {
 
   return props.filteredBeers.map((beer) => {
     return (
-      <div className="menu-card">
+      <div className="menu-card" key={beer.name}>
         <div className="menu-content">
           <img src={`/images/${beer.label}`} alt="Beer"></img>
           <h1>{beer.name}</h1>

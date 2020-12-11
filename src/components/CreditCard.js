@@ -63,8 +63,8 @@ export default class CreditCard extends React.Component {
           <div ref={(c) => (this.form = c)} onSubmit={this.handleSubmit}>
             <fieldset>
               <div className="form-group">
-                <label for="number">Card Number</label>
-                <span class="form-span name">Enter the card number</span>
+                <label htmlFor="number">Card Number</label>
+                <span className="form-span name">Enter the card number</span>
                 <input
                   id="number"
                   type="tel"
@@ -78,10 +78,11 @@ export default class CreditCard extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label for="name">Cardholder</label>
-                <span class="form-span name">As it appears on the card</span>
+                <label htmlFor="name">Cardholder</label>
+                <span className="form-span name">As it appears on the card</span>
                 <input
                   type="text"
+                  id='name'
                   name="name"
                   className="form-control"
                   placeholder=" "
@@ -92,10 +93,11 @@ export default class CreditCard extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label for="expiry">Expiration Date</label>
-                <span class="form-span name">e.g. 12/2021</span>
+                <label htmlFor="expiry">Expiration Date</label>
+                <span className="form-span name">e.g. 12/2021</span>
                 <input
                   type="tel"
+                  id='expiry'
                   name="expiry"
                   className="form-control"
                   placeholder=" "
@@ -106,9 +108,10 @@ export default class CreditCard extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label for="number">CVC</label>
-                <span class="form-span name">Enter the CVC (usually on the back of the card)</span>
+                <label htmlFor="cvc">CVC</label>
+                <span className="form-span name">Enter the CVC (usually on the back of the card)</span>
                 <input type="tel"
+                  id='cvc'
                   name="cvc"
                   className="form-control"
                   placeholder=" "

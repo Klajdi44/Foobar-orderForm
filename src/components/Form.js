@@ -37,7 +37,7 @@ function Form(props) {
       <div className="back-wrapper">
         <button className="back" onClick={() => props.setPage("orderPage")}>
           <svg height="50" width="30">
-            <polyline points="30,50 0,25 30,0" class="triangle" />
+            <polyline points="30,50 0,25 30,0" className="triangle" />
             Sorry, your browser does not support inline SVG.
           </svg>
           Go Back
@@ -62,7 +62,7 @@ function Form(props) {
             const imageUrl = order.name.replace(/\s+/g, "").toLowerCase();
             if (order.amount > 0) {
               return (
-                <li>
+                <li key={order.name}>
                   <img src={`images/${imageUrl}.png`} alt="Order Beer"></img>
                   <div>
                     <h2>{order.name}</h2>

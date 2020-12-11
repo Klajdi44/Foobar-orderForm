@@ -26,7 +26,7 @@ function Menu(props) {
               {orderObj.map((order) => {
                 if (order.amount > 0) {
                   return (
-                    <li>
+                    <li key={order.name + Math.random()}>
                       <h1>{order.name}</h1>
                       <MenuOrder showCheckoutPrice={true} name={order.name} />
                     </li>
