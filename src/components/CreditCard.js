@@ -70,7 +70,7 @@ export default class CreditCard extends React.Component {
                   type="tel"
                   name="number"
                   className="form-control"
-                  placeholder=""
+                  placeholder=" "
                   pattern="[\d| ]{16,22}"
                   required
                   onChange={this.handleInputChange}
@@ -84,7 +84,7 @@ export default class CreditCard extends React.Component {
                   type="text"
                   name="name"
                   className="form-control"
-                  placeholder=""
+                  placeholder=" "
                   required
                   onInput={(e) => allLetter(e.target)}
                   onChange={this.handleInputChange}
@@ -108,7 +108,13 @@ export default class CreditCard extends React.Component {
               <div className="form-group">
                 <label for="number">CVC</label>
                 <span class="form-span name">Enter the CVC (usually on the back of the card)</span>
-                <input type="tel" name="cvc" className="form-control" placeholder="" pattern="\d{3,4}" required onChange={this.handleInputChange} onFocus={this.handleInputFocus} />
+                <input type="tel"
+                  name="cvc"
+                  className="form-control"
+                  placeholder=" "
+                  pattern="\d{3,4}"
+                  required onChange={this.handleInputChange}
+                  onFocus={this.handleInputFocus} />
               </div>
               <input type="hidden" name="issuer" value={issuer} />
               <div className="form-actions"></div>

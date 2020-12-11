@@ -268,22 +268,23 @@ input {
   width: 90%;
   padding: 0.6em;
   border-radius: 20px;
+  outline:none;
+  border: 1px solid var(--wrapper-bg-color)
 }
 
 input:focus {
-  outline: 2px solid gray;
-  -moz-outline-radius: 20px;
+  outline:none;
   box-shadow: none;
+  border: 2px solid var(--main-bg-color)
+
 }
 
-input:not(:placeholder-shown):not(:focus):invalid,
-select:not(:placeholder-shown):not(:focus):invalid {
+input:not(:placeholder-shown):not(:focus):invalid {
   border: 2px solid red;
   animation: shake 1s linear;
 }
 
-input:not(:focus):valid,
-select:not(:focus):valid {
+input:not(:focus):valid{
   border: 2px solid green;
 }
 
