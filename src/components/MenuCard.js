@@ -1,6 +1,14 @@
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
 import MenuOrder from "./MenuOrder";
 
 function MenuCard(props) {
+
+  useEffect(() => {
+    gsap.fromTo(".menu-card", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
+  }, []);
+
+
   return props.filteredBeers.map((beer) => {
     return (
       <div className="menu-card">

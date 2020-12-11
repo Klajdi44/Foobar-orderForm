@@ -1,10 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import gsap from "gsap";
 import CreditCard from "./CreditCard";
 import { OrderContext } from "./OrderContext";
 import postData from "../modules/postData";
 
 function Form(props) {
   const [orderObj] = useContext(OrderContext);
+
+  useEffect(() => {
+    gsap.fromTo(".form-wrapper", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
+
+  }, [])
+
   let filteredPostOrders = orderObj.map((order) => {
     return order.amount < 1 ? undefined : { name: order.name, amount: Number(order.amount) };
   });
