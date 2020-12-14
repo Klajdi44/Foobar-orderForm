@@ -15,7 +15,7 @@ function Menu(props) {
 
         <MenuCard filteredBeers={props.filteredBeers} />
         <h1 className="unavailable-beer-heading"> Currently unavailable beers</h1>
-        <UnavailableBeers apiData={props.apiData} />
+        <UnavailableBeers unavailableBeers={props.unavailableBeers} />
       </div>
 
       <div className="order">
@@ -41,7 +41,7 @@ function Menu(props) {
               <h1>Total</h1>
               <span>{orderObj.reduce((acc, value) => {
                 return acc + value.price;
-              }, 0)} DKK</span>
+              }, 0)}DKK</span>
               <br />
             </div>
 

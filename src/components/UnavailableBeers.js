@@ -1,12 +1,7 @@
 
 function UnavailableBeers(props) {
-	const beersFromList = props.apiData[0];
-	const beersFromTap = props.apiData[1].taps.map((beer) => beer.beer);
-	const filteredBeers = beersFromList.filter((beers) => !beersFromTap.includes(beers.name));
-
-
 	return (
-		filteredBeers.map(beer => {
+		props.unavailableBeers.map(beer => {
 			return (
 
 				<div className="menu-card menu-unavailable" key={beer.name}>

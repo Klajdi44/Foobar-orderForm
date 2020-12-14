@@ -9,7 +9,6 @@ function Form(props) {
 
   useEffect(() => {
     gsap.fromTo(".form-wrapper", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
-
   }, [])
 
   let filteredPostOrders = orderObj.map((order) => {
@@ -52,6 +51,9 @@ function Form(props) {
           }}
         >
           <CreditCard />
+          <div className="total-price">Total {orderObj.reduce((acc, value) => {
+            return acc + value.price;
+          }, 0)}DKK</div>
           <button className="form-btn">Order</button>
         </form>
       </div>

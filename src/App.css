@@ -50,6 +50,10 @@ body {
   font-weight: 400;
 }
 
+button{
+  background-color: white;
+}
+
 /* Menu */
 /* Menu cards */
 
@@ -75,7 +79,7 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
-
+  overflow-x: hidden;
   overflow-y: visible;
 }
 
@@ -315,7 +319,7 @@ input:not(:focus):valid{
 
 .back-wrapper {
   grid-area: back;
-  background: linear-gradient(90deg, #fff 50%, var(--main-bg-color) 50%);
+  background: var(--main-bg-color);
 }
 
 .back {
@@ -329,19 +333,19 @@ input:not(:focus):valid{
   flex-wrap: nowrap;
   align-items: center;
   font-size: var(--big-header-font-size);
+  color: white;
 }
 
 .back > svg {
   fill: transparent;
-  stroke: var(--main-bg-color);
+  stroke: white;
   stroke-width: 3;
   transition: all 0.8s ease-in-out;
 }
 
 .order-list-wrapper {
   grid-area: orderlist;
-  padding: 2em;
-  min-height: 100vh;
+  padding: 2em 2em 5em;
 }
 
 .form-btn {
@@ -365,6 +369,11 @@ input:not(:focus):valid{
 
 .rccs {
   margin-top: 1em;
+}
+.total-price{
+  font-size: 2em;
+  font-weight: bold;
+
 }
 
 /* animations */
@@ -527,6 +536,23 @@ width:60px;
     min-height: 80vh;
   }
 
+  .back-wrapper {
+    background: linear-gradient(90deg, #fff 50%, var(--main-bg-color) 50%);
+  }
+
+  .order-list-wrapper {
+    min-height: 100vh;
+  }
+
+  .back {
+    color: var(--main-bg-color);
+  }
+
+  .back > svg {
+    stroke: var(--main-bg-color);
+  }
+
+
   .confirmation-wrapper{
   max-width: 50%;
   max-height:50%;
@@ -608,5 +634,8 @@ width:60px;
 .check{
   width:90px;
   }
- 
+  .confirmation-wrapper{
+    max-width: 60%;
+   height:70%;
+    }
 }

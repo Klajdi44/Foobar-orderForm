@@ -26,7 +26,7 @@ function App() {
         <div className="loader-wrapper">
           <Loader
             type="RevolvingDot"
-            color="#00BFFF"
+            color="#bf2d26"
             height={100}
             width={100}
           />
