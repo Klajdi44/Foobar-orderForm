@@ -10,7 +10,7 @@ function Confirmation(props) {
   const resetBeers = orderObj.map(({ amount, price, ...restOfData }) => ({ ...restOfData, amount: 0, price: 0 }));
 
   useEffect(() => {
-    gsap.fromTo(".confirmation-wrapper", { opacity: 0, y: -100 + "%" }, { opacity: 1, y: 0 + "%", duration: 1 });
+    gsap.fromTo(".confirmation-wrapper", { opacity: 0, ease: "expo.out", y: -100 + "%" }, { opacity: 1, y: 0 + "%", duration: 1 });
 
   }, [])
   return (

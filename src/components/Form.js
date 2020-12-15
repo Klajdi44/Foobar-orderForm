@@ -10,15 +10,18 @@ function Form(props) {
   const [orderObj] = useContext(OrderContext);
   gsap.registerPlugin(ScrollToPlugin);
 
-  // useEffect(() => {
-  //   gsap.to(window, { duration: 0.1, ease: "none", scrollTo: 0 });
-  //   gsap.fromTo(".form-wrapper", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
-  // }, []);
+
   useEffect(() => {
-    var tl = gsap.timeline({ defaults: { duration: 2, ease: "power2" } });
-    tl.to(window, { duration: 0.1, scrollTo: 0 })
-      .from(".form-wrapper", { opacity: 0.5 }) //child tweens will inherit the duration and from the parent timeline!
-      .to(".form-wrapper", { opacity: 1 });
+
+    const tl = gsap.timeline({ defaults: { duration: 2, ease: "power2" } });
+
+    window.matchMedia("(min-width: 768px)").matches ?
+      gsap.fromTo(".form-wrapper", { opacity: 0, ease: "expo.out", x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 })
+      :
+      tl.to(window, { duration: 0.1, scrollTo: 0 })
+        .from(".form-wrapper", { opacity: 0.5 }) //child tweens will inherit the duration and from the parent timeline!
+        .to(".form-wrapper", { opacity: 1 });
+
   }, []);
 
   let filteredPostOrders = orderObj.map((order) => {
