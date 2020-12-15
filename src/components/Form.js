@@ -1,15 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 import CreditCard from "./CreditCard";
 import { OrderContext } from "./OrderContext";
 import postData from "../modules/postData";
 
 function Form(props) {
   const [orderObj] = useContext(OrderContext);
+  gsap.registerPlugin(ScrollToPlugin);
 
+  // useEffect(() => {
+  //   gsap.to(window, { duration: 0.1, ease: "none", scrollTo: 0 });
+  //   gsap.fromTo(".form-wrapper", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
+  // }, []);
   useEffect(() => {
-    gsap.fromTo(".form-wrapper", { opacity: 0, x: 100 + "%" }, { opacity: 1, x: 0 + "%", stagger: 0.2, duration: 1 });
-  }, [])
+    var tl = gsap.timeline({ defaults: { duration: 2, ease: "power2" } });
+    tl.to(window, { duration: 0.1, scrollTo: 0 })
+      .from(".form-wrapper", { opacity: 0.5 }) //child tweens will inherit the duration and from the parent timeline!
+      .to(".form-wrapper", { opacity: 1 });
+  }, []);
 
   let filteredPostOrders = orderObj.map((order) => {
     return order.amount < 1 ? undefined : { name: order.name, amount: Number(order.amount) };
@@ -51,9 +61,13 @@ function Form(props) {
           }}
         >
           <CreditCard />
-          <div className="total-price">Total {orderObj.reduce((acc, value) => {
-            return acc + value.price;
-          }, 0)}DKK</div>
+          <div className="total-price">
+            Total{" "}
+            {orderObj.reduce((acc, value) => {
+              return acc + value.price;
+            }, 0)}
+            DKK
+          </div>
           <button className="form-btn">Order</button>
         </form>
       </div>

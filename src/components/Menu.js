@@ -39,13 +39,16 @@ function Menu(props) {
           <div className="order-price">
             <div className="overall-price">
               <h1>Total</h1>
-              <span>{orderObj.reduce((acc, value) => {
-                return acc + value.price;
-              }, 0)}DKK</span>
+              <span>
+                {orderObj.reduce((acc, value) => {
+                  return acc + value.price;
+                }, 0)}
+                DKK
+              </span>
               <br />
             </div>
 
-            <button onClick={() => orderObj.map(beer => beer.price > 0 ? props.setPage('formPage') : null)}>Proceed To Checkout</button>
+            <button onClick={() => orderObj.map((beer) => (beer.price > 0 ? props.setPage("formPage") : null))}>Proceed To Checkout</button>
           </div>
         </div>
       </div>
