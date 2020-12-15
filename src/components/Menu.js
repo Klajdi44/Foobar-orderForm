@@ -19,8 +19,6 @@ function Menu(props) {
     }
   });
 
-  console.log(filteredCategories);
-
   return (
     <article className="menu-wrapper">
       <div className="menu">

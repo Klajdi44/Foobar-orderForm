@@ -37,7 +37,7 @@ function Order(props) {
         <Menu setPage={setPage} setCategory={setCategory} category={category} apiData={props.apiData} filteredBeers={updated} allBeers={filteredBeers} unavailableBeers={unavailableBeers} />
       ) : null}
       {page === "formPage" ? <Form setPage={setPage} setConfirmationP={setConfirmationP} /> : null}
-      {page === "confirmationPage" ? <Confirmation confirmationP={confirmationP} setPage={setPage} /> : null}
+      {page === "confirmationPage" ? <Confirmation setCategory={setCategory} confirmationP={confirmationP} setPage={setPage} /> : null}
     </section>
   );
 }

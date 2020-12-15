@@ -88,16 +88,6 @@ button {
 .filters-wrapper {
   margin: auto;
 }
-/* 
-.filters {
-  transition: all 0.3s;
-  cursor: pointer;
-  padding: 0.5em 1em;
-  margin: 1em;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  font-size: var(--regular-font-size);
-} */
 
 .filters:disabled {
   pointer-events: none;
@@ -106,13 +96,13 @@ button {
 .filters {
   transition: all 0.3s;
   cursor: pointer;
-  padding: 0.5em 1em;
-  margin: 1em;
+  padding: 0.5em;
+  margin: 0.5em;
   border: 1px solid transparent;
   background-color: transparent;
   color: white;
   /* border-radius: 10px; */
-  font-size: var(--regular-font-size);
+  /* font-size: var(--regular-font-size); */
   font-family: var(--header-font-family);
   border-bottom: 1px solid white;
 }
@@ -123,6 +113,10 @@ button {
   color: black;
   border-radius: 15px;
   background-color: white;
+}
+
+button:focus {
+  outline: 0;
 }
 
 .menu-unavailable {
@@ -171,7 +165,7 @@ button {
 }
 
 .menu-content > p {
-  padding: 0 2em 3em 2em;
+  padding: 0 1em;
 }
 
 .menu-order {
@@ -279,7 +273,8 @@ button {
   transition: all 0.3s;
 }
 
-.order-price > button:hover {
+.order-price > button:hover,
+.confirmation-wrapper > button:hover {
   background-color: var(--wrapper-bg-color);
   color: white;
   border: 1px solid white;
@@ -665,7 +660,7 @@ input:not(:focus):valid {
     grid-template-columns: 3fr 1fr;
   }
   .menu-card {
-    width: 30%;
+    width: 29%;
   }
   .confirmation-wrapper {
     justify-content: space-between;
@@ -686,5 +681,9 @@ input:not(:focus):valid {
   .confirmation-wrapper {
     max-width: 60%;
     height: 70%;
+  }
+
+  .filters {
+    font-size: var(--header-font-size);
   }
 }
