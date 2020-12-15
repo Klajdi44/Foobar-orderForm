@@ -8,9 +8,34 @@ function Menu(props) {
   // eslint-disable-next-line
   const [orderObj, setOrderObj] = useContext(OrderContext);
 
+  function updateCategory(e) {
+    props.setCategory(e.target.innerText);
+  }
+
+  const filteredCategories = [];
+  props.allBeers.forEach((availableBeer) => {
+    if (filteredCategories.indexOf(availableBeer.category) < 0) {
+      filteredCategories.push(availableBeer.category);
+    }
+  });
+
+  console.log(filteredCategories);
+
   return (
     <article className="menu-wrapper">
       <div className="menu">
+        <div className="filters-wrapper">
+          <button className="filters" disabled={props.category === "All"} onClick={updateCategory}>
+            All
+          </button>
+          {filteredCategories.map((beerCategory) => {
+            return (
+              <button className="filters" disabled={beerCategory === props.category} onClick={updateCategory}>
+                {beerCategory}
+              </button>
+            );
+          })}{" "}
+        </div>
         <h1>Our Beer selection</h1>
 
         <MenuCard filteredBeers={props.filteredBeers} />

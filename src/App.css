@@ -64,6 +64,7 @@ button {
   grid-template-columns: 1fr;
   gap: 1em;
   height: auto;
+  margin: 1em;
 }
 
 .menu {
@@ -82,6 +83,46 @@ button {
   align-content: flex-start;
   overflow-x: hidden;
   overflow-y: visible;
+}
+
+.filters-wrapper {
+  margin: auto;
+}
+/* 
+.filters {
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  margin: 1em;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: var(--regular-font-size);
+} */
+
+.filters:disabled {
+  pointer-events: none;
+}
+
+.filters {
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  margin: 1em;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: white;
+  /* border-radius: 10px; */
+  font-size: var(--regular-font-size);
+  font-family: var(--header-font-family);
+  border-bottom: 1px solid white;
+}
+
+.filters:hover,
+.filters:disabled {
+  background-color: var(--wrapper-bg-color);
+  color: black;
+  border-radius: 15px;
+  background-color: white;
 }
 
 .menu-unavailable {
@@ -229,11 +270,19 @@ button {
 }
 
 .order-price > button {
+  cursor: pointer;
   padding: 0.5em 1em;
   margin: 1em;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 10px;
   font-size: var(--big-header-font-size);
+  transition: all 0.3s;
+}
+
+.order-price > button:hover {
+  background-color: var(--wrapper-bg-color);
+  color: white;
+  border: 1px solid white;
 }
 
 /* Loader */
