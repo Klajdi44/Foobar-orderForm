@@ -3,6 +3,7 @@ async function getData(urls) {
 		const response = await Promise.all(
 			urls.map((url) => fetch(url).then((response) => response.json()))
 		);
+		console.log(response);
 		return response;
 	} catch (error) {
 		console.log('There was an error!', error);

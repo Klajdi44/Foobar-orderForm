@@ -13,6 +13,8 @@ function Order(props) {
   const beersFromList = props.apiData[0];
   const beersFromTap = props.apiData[1].taps.map((beer) => beer.beer);
   const filteredBeers = beersFromList.filter((beers) => beersFromTap.includes(beers.name));
+
+
   const unavailableBeers = beersFromList.filter((beers) => !beersFromTap.includes(beers.name));
   let updated = filteredBeers.filter((beer) => beer.category === category);
 

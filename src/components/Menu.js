@@ -28,7 +28,7 @@ function Menu(props) {
           </button>
           {filteredCategories.map((beerCategory) => {
             return (
-              <button className="filters" disabled={beerCategory === props.category} onClick={updateCategory}>
+              <button key={beerCategory} className="filters" disabled={beerCategory === props.category} onClick={updateCategory}>
                 {beerCategory}
               </button>
             );
